@@ -1,10 +1,12 @@
 package Heizung;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Heizung{
 
-	ArrayList<Observer> o = new ArrayList<>();
+	Map<Observer, Integer> v = new HashMap<>();
 	int value;
 	
 	public void setValue(int v) {
@@ -13,19 +15,21 @@ public class Heizung{
 	}
 	
 	public void notifyAllObservers() {
-		for(int i = 0; i < o.size(); i++) {
-			o.get(i).update(value);
+		for(Entry<Observer, Integer> e : v.entrySet()) {
+			if(e.getValue() < value) {
+				e.getKey().update(value);
+			}
 		}
 	}
 	
-	public void register(Observer ob) {
-		if(!o.contains(ob)) {
-			o.add(ob);
+	public void register(Observer ob, int minTemp) {
+		if(!v.containsKey(ob)) {
+			v.put(ob, minTemp);
 		}
 	}
 	
 	public void unRegister(Observer ob) {
-		o.remove(ob);
+		v.remove(ob);
 	}
 	
 }
