@@ -6,8 +6,8 @@ public class Main {
 		Elias e = new Elias();
 		Noah n = new Noah();
 		
-		h.register(e, 19);
-		h.register(n, 27);
+		h.register(e);
+		h.register(n);
 		h.setValue(20);
 		h.setValue(30);
 		h.unRegister(n);
