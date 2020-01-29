@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="MyUnit">
+		<class>maven.database.BestellungNeunerJPA.Adresse</class>
+		<class>maven.database.BestellungNeunerJPA.Kunde</class>
+		<class>maven.database.BestellungNeunerJPA.Artikel</class>
+		<class>maven.database.BestellungNeunerJPA.Bestellung</class>
+		<class>maven.database.BestellungNeunerJPA.Bestellung_Artikel</class>
+		<properties>
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://127.0.0.1:5432/swp"/>
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<property name="javax.persistence.jdbc.password" value="neuner9er"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>
