@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>WebProject</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>DBUser</param-name>
+		<param-value>postgres</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pwd</param-name>
+		<param-value>neuner9er</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:postgresql://127.0.0.1:5432/HashLogin</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>DBDriver</param-name>
+		<param-value>org.postgresql.Driver</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>webprojects.filter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/startseite.jsp</url-pattern>
+	</filter-mapping>
+</web-app>
