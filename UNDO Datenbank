@@ -1,0 +1,5 @@
+Undo Datenbanken:
+
+Zuerst sollte eine neue Tabelle History erstellt werden.
+In dem String sollte der Name der betreffenden Tabelle, die Art der Operationen und die gelöschten oder geänderten Paramter stehen. Wenn der Benutzer eine Create Operation durchführt, wird in dem String der Tabellenname, die Operation und der PrimaryKey gespeichert. Der zu löschende Eintrag wird durch den Tabellennamen und durch den PrimaryKey gefunden wenn der Benutzer UNDO nach der Operation Create ausführt. Bei einer Update Operation werden alle Parameter angegeben, deren Werte durch diese Operation verändert wurden. Wenn ein Eintrag in der Tabelle gelöscht wird soll diese im String ebenfalls gespeichert werden. 
+
